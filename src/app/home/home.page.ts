@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { general, politics, sport } from '../data/newspaper-data';
+import { cultureAndArt, fashion, general, politicsAndEconomy, regional, sport } from '../data/newspaper-data';
 import { Browser } from '@capacitor/browser';
 
 
@@ -13,8 +13,11 @@ export class HomePage {
 
   private readonly _allNewspapers = [
     { title: 'Allgemein', data: general },
-    { title: 'Politik und Wirtschaft', data: politics },
+    { title: 'Politik und Wirtschaft', data: politicsAndEconomy },
     { title: 'Sport', data: sport },
+    { title: 'Lokal', data: regional },
+    { title: 'Kunst und Kultur', data: cultureAndArt },
+    { title: 'Fashion', data: fashion },
   ];
 
   public filteredNewspapers = this._allNewspapers;
