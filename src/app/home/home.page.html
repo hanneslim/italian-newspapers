@@ -1,16 +1,17 @@
 <ion-header [translucent]="false">
   <ion-toolbar>
     <ion-title>
-      Zeitungen
+      Italienische Zeitungen
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar class="ion-padding-top" [debounce]="500"
+    (ionInput)="filterNewspapers($event.detail.value)"></ion-searchbar>
   <ion-grid class="ion-padding-horizontal">
-    @for(newspaper of newspapers; track newspaper.title){
+    @for(newspaper of filteredNewspapers; track newspaper.title){
 
 
     <ion-row>

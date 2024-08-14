@@ -8,11 +8,29 @@ import { general, politics, sport } from '../data/newspaper-data';
 })
 export class HomePage {
 
-  public readonly newspapers = [
-    { title: 'Politik und Wirtschaft', data: politics },
+  private readonly _allNewspapers = [
     { title: 'Allgemein', data: general },
+    { title: 'Politik und Wirtschaft', data: politics },
     { title: 'Sport', data: sport },
   ];
 
+  public filteredNewspapers = this._allNewspapers;
 
+
+  public filterNewspapers(inputValue: string | null | undefined) {
+    if (!inputValue) {
+      this.filteredNewspapers = this._allNewspapers
+      return
+    }
+    this.filteredNewspapers = this._allNewspapers.map(np => {
+      return {
+        ...np, data: np.data.filter(
+          npData => npData.label.toLowerCase().includes(inputValue.toLowerCase()))
+
+
+      }
+
+
+    }).filter(np => np.data.length)
+  }
 }
