@@ -3,19 +3,27 @@
   border-radius: 14px;
 }
 
-.swiper {
-  width: 8rem !important;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-right: 1rem;
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+
+  /* Firefox */
+  .card {
+    display: inline-block;
+    padding: 0.5rem;
+  }
 }
 
-swiper-container {
-  margin-left: 0 !important;
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
-swiper-slide {
-  margin-right: 1rem;
+.scroll-view {
+  margin: 1rem;
 }
 
 ion-card {

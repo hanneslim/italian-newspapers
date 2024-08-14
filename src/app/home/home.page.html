@@ -1,4 +1,4 @@
-<ion-header [translucent]="false">
+<ion-header>
   <ion-toolbar>
     <ion-title>
       Italienische Zeitungen
@@ -7,39 +7,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="scroll-view">
+    <ion-searchbar class="ion-padding-top" [debounce]="500"
+      (ionInput)="filterNewspapers($event.detail.value)"></ion-searchbar>
 
-  <ion-searchbar class="ion-padding-top" [debounce]="500"
-    (ionInput)="filterNewspapers($event.detail.value)"></ion-searchbar>
-  <ion-grid class="ion-padding-horizontal">
     @for(newspaper of filteredNewspapers; track newspaper.title){
 
 
-    <ion-row>
+    <h4 class="title">
+      {{newspaper.title}}
+    </h4>
 
 
-      <h4 class="title">
-        {{newspaper.title}}
-      </h4>
+    <div class="scrolling-wrapper">
 
-    </ion-row>
-    <ion-row class="ion-no-padding
-">
-      <swiper-container [loop]="true">
+      @for (paper of newspaper.data; track paper.id) {
+      <div class="card">
+        <ion-card class="category" (click)="openLink(paper.link)">
+          <ion-img src="assets/{{paper.imagePath}}" alt="{{paper.label}}">
+          </ion-img>
+        </ion-card>
+      </div>
+      }
 
-        @for (paper of newspaper.data; track paper.id) {
-        <swiper-slide class="swiper">
-          <ion-card class="category" (click)="openLink(paper.link)">
-            <ion-img src="assets/{{paper.imagePath}}" alt="{{paper.label}}">
-            </ion-img>
-          </ion-card>
-        </swiper-slide>
-        }
+    </div>
 
-      </swiper-container>
-
-    </ion-row>
     }
 
 
-  </ion-grid>
+  </div>
 </ion-content>

@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { register } from 'swiper/element/bundle';
-
-register();
 
 @Component({
   selector: 'app-root',
@@ -9,5 +6,5 @@ register();
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() { }
 }
