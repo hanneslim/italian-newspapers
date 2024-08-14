@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { general, politics, sport } from '../data/newspaper-data';
-import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
+import { Browser } from '@capacitor/browser';
 
 
 @Component({
@@ -10,7 +10,6 @@ import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 })
 export class HomePage {
 
-  private readonly iab = inject(InAppBrowser)
 
   private readonly _allNewspapers = [
     { title: 'Allgemein', data: general },
@@ -35,11 +34,8 @@ export class HomePage {
     }).filter(np => np.data.length)
   }
 
-  public openLink(link: string) {
-    this.iab.create('https://' + link, '_self', {
-      location: 'no',
-      toolbar: 'yes'
-    });
+  public async openLink(link: string) {
+    await Browser.open({ url: 'http://' + link });
   };
 
 }
