@@ -28,7 +28,7 @@
 
         @for (paper of newspaper.data; track paper.id) {
         <swiper-slide class="swiper">
-          <ion-card class="category">
+          <ion-card class="category" (click)="openLink(paper.link)">
             <ion-img src="assets/{{paper.imagePath}}" alt="{{paper.label}}">
             </ion-img>
           </ion-card>
