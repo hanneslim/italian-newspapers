@@ -1,7 +1,31 @@
-
-
 .category {
-  width: 100%;
   box-shadow: none;
   border-radius: 14px;
+}
+
+.swiper {
+  width: 8rem !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+swiper-container {
+  margin-left: 0 !important;
+}
+
+swiper-slide {
+  margin-right: 1rem;
+}
+
+ion-card {
+  margin: 0;
+  width: 8rem;
+  height: 8rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.title {
+  font-size: min(1.0625rem, 20.4px);
+  font-weight: 600;
 }
