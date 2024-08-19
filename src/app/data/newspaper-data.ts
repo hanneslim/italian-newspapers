@@ -11,9 +11,12 @@ export const politicsAndEconomy: Newspaper[] = [
     { id: 'WALLSTREETITALIA', label: 'Wall Street Italia', link: 'wallstreetitalia.com', imagePath: 'wallstreetItalia.jpg' },
     { id: 'ITALIAOGGI', label: 'Italia Oggi', link: 'italiaoggi.it', imagePath: 'italia-oggi.png' },
     { id: 'ILDENARO', label: 'il denaro', link: 'ildenaro.it', imagePath: 'il-denaro.png' },
+    { id: 'ILGIORNALE', label: 'il Giornale', link: 'ilgiornale.it', imagePath: 'il-giornale.png' },
+    { id: 'LIBEROQUOTIDIANO', label: 'Libero quotidiano', link: 'liberoquotidiano.it', imagePath: 'libero-quotidiano.jpg' },
+    { id: 'LAVERITA', label: 'LaVerita', link: 'laverita.info', imagePath: 'laverita.png' },
     { id: 'LESPRESSO', label: "L'Espresso", link: 'lespresso.it', imagePath: 'lespresso.png' },
+    { id: 'ILMANIFESTO', label: "il manifesto", link: 'ilmanifesto.it', imagePath: 'il-manifesto.jpg' },
     { id: 'ILRIFORMISTA', label: 'Il Riformista', link: 'ilriformista.it', imagePath: 'il-riformista.png' }]
-
 
 
 export const general: Newspaper[] = [
@@ -21,6 +24,7 @@ export const general: Newspaper[] = [
     { id: 'CORRIEREDELLASERA', label: 'Corriere della sera', link: 'corriere.it', imagePath: 'Corriere-della-Sera.svg' },
     { id: 'FATTOQUOTIDIANO', label: 'Il Fatto Quotidiano', link: 'ilfattoquotidiano.it', imagePath: 'ilfattoquotidiano.png' },
     { id: 'LASTAMPA', label: 'La Stampa', link: 'lastampa.it', imagePath: 'la-stampa.png' },
+    { id: 'AVVENIRE', label: 'Avvenire', link: 'avvenire.it', imagePath: 'avvenire.png' },
     { id: 'ILTIRRENO', label: 'Il Tirreno', link: 'iltirreno.it', imagePath: 'iltirreno.png' }]
 
 
@@ -47,7 +51,6 @@ export const regional: Newspaper[] = [
 export const cultureAndArt: Newspaper[] = [
     { id: 'DILEI', label: 'Di Lei', link: 'dilei.it', imagePath: 'di_lei.jpg' },
     { id: 'OGGI', label: 'OGGI', link: 'oggi.it', imagePath: 'oggi.jpg' },
-    { id: 'WITTY', label: 'WITTY', link: 'wittytv.it', imagePath: 'wittytv.jpg' },
     { id: 'SORRISI', label: 'sorrisi e canzoni', link: 'sorrisi.com', imagePath: 'sorrisi.png' }]
 
 export const fashion: Newspaper[] = [
