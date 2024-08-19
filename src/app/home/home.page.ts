@@ -15,7 +15,7 @@ export class HomePage implements OnInit {
   private _storageService = inject(StorageService)
 
 
-  public readonly allNewspapers = [
+  public allNewspapers = [
     { title: 'Generale', data: general },
     { title: 'Politica ed economia', data: politicsAndEconomy },
     { title: 'Sport', data: sport },
@@ -30,6 +30,8 @@ export class HomePage implements OnInit {
 
   public async ngOnInit() {
     this.favourites = await this._storageService.getFavourites()
+
+    this.allNewspapers = this._markFavouriteNewspapers()
   }
 
 
@@ -51,6 +53,27 @@ export class HomePage implements OnInit {
     await Browser.open({ url: 'http://' + link });
   };
 
+  private _markFavouriteNewspapers() {
+    return this.allNewspapers.map(allNp => {
+      return {
+        ...allNp, data: allNp.data.map(data => {
+          return { ...data, isFavourite: this.favourites.data.some((np) => np.id === data.id) }
+        })
+      }
+    })
+  }
+
+  private _unmarkFavouriteNewspapers(paper: Newspaper) {
+    this.allNewspapers.forEach(npData => {
+      npData.data.forEach(d => {
+        if (d.id === paper.id) {
+          d.isFavourite = false;
+        }
+      })
+    }
+    )
+  }
+
   public addToFavourites(paper: Newspaper) {
     if (this.favourites.data.some((np) => np.id === paper.id)) {
       return
@@ -58,15 +81,13 @@ export class HomePage implements OnInit {
     this.favourites.data.push(paper)
     this._storageService.setFavourites(this.favourites)
 
+    this.allNewspapers = this._markFavouriteNewspapers()
   }
 
   public deleteFromFavourites(paper: Newspaper) {
     remove(this.favourites.data, (data) => data.id === paper.id)
+    this._unmarkFavouriteNewspapers(paper)
     this._storageService.setFavourites(this.favourites)
-  }
-
-  isFavourite(paper: Newspaper): boolean {
-    return this.favourites.data.some((np) => np.id === paper.id);
   }
 
 }

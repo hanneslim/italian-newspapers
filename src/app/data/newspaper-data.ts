@@ -1,5 +1,5 @@
 
-export type Newspaper = { id: string; label: string; link: string; imagePath: string; }
+export type Newspaper = { id: string; label: string; link: string; imagePath: string; isFavourite?: boolean }
 export type DisplayNewspaper = { title: string, data: Newspaper[] }
 
 
