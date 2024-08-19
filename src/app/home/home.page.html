@@ -37,7 +37,7 @@
         <ion-card class="category">
           <div class="image-container">
             <ion-img src="assets/{{paper.imagePath}}" (click)="openLink(paper.link)" alt="{{paper.label}}" />
-            @if(favourites.data.includes(paper)){
+            @if(isFavourite(paper)){
             <ion-icon name="heart" color="danger" (click)="deleteFromFavourites(paper)"></ion-icon>
             }
             @else {

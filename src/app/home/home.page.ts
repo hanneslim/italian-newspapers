@@ -52,7 +52,7 @@ export class HomePage implements OnInit {
   };
 
   public addToFavourites(paper: Newspaper) {
-    if (this.favourites.data.includes(paper)) {
+    if (this.favourites.data.some((np) => np.id === paper.id)) {
       return
     }
     this.favourites.data.push(paper)
@@ -61,8 +61,12 @@ export class HomePage implements OnInit {
   }
 
   public deleteFromFavourites(paper: Newspaper) {
-    remove(this.favourites.data, (data) => data === paper)
+    remove(this.favourites.data, (data) => data.id === paper.id)
     this._storageService.setFavourites(this.favourites)
+  }
+
+  isFavourite(paper: Newspaper): boolean {
+    return this.favourites.data.some((np) => np.id === paper.id);
   }
 
 }
