@@ -12,12 +12,12 @@ export class HomePage {
 
 
   private readonly _allNewspapers = [
-    { title: 'Allgemein', data: general },
-    { title: 'Politik und Wirtschaft', data: politicsAndEconomy },
+    { title: 'Generale', data: general },
+    { title: 'Politica ed economia', data: politicsAndEconomy },
     { title: 'Sport', data: sport },
-    { title: 'Lokal', data: regional },
-    { title: 'Kunst und Kultur', data: cultureAndArt },
-    { title: 'Fashion', data: fashion },
+    { title: 'Regionale', data: regional },
+    { title: 'Arte e cultura', data: cultureAndArt },
+    { title: 'Moda', data: fashion },
   ];
 
   public filteredNewspapers = this._allNewspapers;
