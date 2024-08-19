@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Italienische Zeitungen</string>
-    <string name="title_activity_main">Italienische Zeitungen</string>
-    <string name="package_name">com.italiannewspapers.app</string>
-    <string name="custom_url_scheme">com.italiannewspapers.app</string>
+    <string name="app_name">Giornali italiani</string>
+    <string name="title_activity_main">Giornali italiani</string>
+    <string name="package_name">com.giornaliitaliani.app</string>
+    <string name="custom_url_scheme">com.giornaliitaliani.app</string>
 </resources>

@@ -26,6 +26,7 @@
     "@capacitor/cli": "^6.1.2",
     "@capacitor/core": "^6.1.2",
     "@ionic/angular": "^8.0.0",
+    "@ionic/storage-angular": "^4.0.0",
     "@types/lodash": "^4.17.7",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",

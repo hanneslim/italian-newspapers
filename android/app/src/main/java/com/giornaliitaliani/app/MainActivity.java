@@ -1,4 +1,4 @@
-package com.italiannewspapers.app;
+package com.giornaliitaliani.app;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.italiannewspapers.app',
-  appName: 'Italienische Zeitungen',
+  appId: 'com.giornaliitaliani.app',
+  appName: 'Giornali italiani',
   webDir: 'www',
   cordova: {
     preferences: {

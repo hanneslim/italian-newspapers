@@ -1,5 +1,6 @@
 
 export type Newspaper = { id: string; label: string; link: string; imagePath: string; }
+export type DisplayNewspaper = { title: string, data: Newspaper[] }
 
 
 
