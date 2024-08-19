@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="title">
       Giornali italiani
     </ion-title>
   </ion-toolbar>
@@ -11,27 +11,44 @@
     <ion-searchbar class="ion-padding-top" [debounce]="500"
       (ionInput)="filterNewspapers($event.detail.value)"></ion-searchbar>
 
-    @for(newspaper of filteredNewspapers; track newspaper.title){
-
-
-    <h4 class="title">
-      {{newspaper.title}}
-    </h4>
-
-
+    @if(favourites.data.length&&!filteredNewspapers.length){
+    <h4 class="title">{{favourites.title}}</h4>
     <div class="scrolling-wrapper">
-
-      @for (paper of newspaper.data; track paper.id) {
+      @for (paper of favourites.data; track paper.id) {
       <div class="card">
-        <ion-card class="category" (click)="openLink(paper.link)">
-          <ion-img src="assets/{{paper.imagePath}}" alt="{{paper.label}}">
-          </ion-img>
+        <ion-card class="category">
+          <div class="image-container">
+            <ion-img src="assets/{{paper.imagePath}}" (click)="openLink(paper.link)" alt="{{paper.label}}" />
+            <ion-icon name="heart" color="danger" (click)="deleteFromFavourites(paper)"></ion-icon>
+          </div>
         </ion-card>
       </div>
       }
-
     </div>
+    }
 
+    @for(newspaper of (filteredNewspapers.length?filteredNewspapers:allNewspapers); track newspaper.title){
+    <h4 class="title">
+      {{newspaper.title}}
+    </h4>
+    <div class="scrolling-wrapper">
+      @for (paper of newspaper.data; track paper.id) {
+      <div class="card">
+        <ion-card class="category">
+          <div class="image-container">
+            <ion-img src="assets/{{paper.imagePath}}" (click)="openLink(paper.link)" alt="{{paper.label}}" />
+            @if(favourites.data.includes(paper)){
+            <ion-icon name="heart" color="danger" (click)="deleteFromFavourites(paper)"></ion-icon>
+            }
+            @else {
+            <ion-icon name="heart-sharp" color="base-favourite" (click)="addToFavourites(paper)"></ion-icon>
+            }
+
+          </div>
+        </ion-card>
+      </div>
+      }
+    </div>
     }
 
 

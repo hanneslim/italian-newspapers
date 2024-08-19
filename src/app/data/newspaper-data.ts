@@ -1,5 +1,5 @@
 
-type Newspaper = { id: string; label: string; link: string; imagePath: string; }
+export type Newspaper = { id: string; label: string; link: string; imagePath: string; }
 
 
 

@@ -35,3 +35,21 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+:root {
+    --ion-color-base-favourite: #d5d5d6;
+    --ion-color-base-favourite-rgb: 213, 213, 214;
+    --ion-color-base-favourite-contrast: #000000;
+    --ion-color-base-favourite-contrast-rgb: 0, 0, 0;
+    --ion-color-base-favourite-shade: #d7d8da;
+    --ion-color-base-favourite-tint: #d5d5d6;
+}
+
+.ion-color-base-favourite {
+    --ion-color-base: var(--ion-color-base-favourite);
+    --ion-color-base-rgb: var(--ion-color-base-favourite-rgb);
+    --ion-color-contrast: var(--ion-color-base-favourite-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-base-favourite-contrast-rgb);
+    --ion-color-shade: var(--ion-color-base-favourite-shade);
+    --ion-color-tint: var(--ion-color-base-favourite-tint);
+}

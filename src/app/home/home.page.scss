@@ -37,3 +37,20 @@ ion-card {
   font-size: min(1.0625rem, 20.4px);
   font-weight: 600;
 }
+
+.image-container {
+  position: relative;
+}
+
+.image-container ion-img {
+  display: block;
+}
+
+.image-container ion-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.25rem;
+  padding-top: 0.3rem;
+  padding-right: 0.3rem;
+}
